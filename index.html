@@ -1,107 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMPHNEN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Space Mono', monospace;
-            margin: 0;
-            padding: 10px;
-            background: #96c4fa;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 800px;
-            width: 90%;
-        }
-        .logo {
-            width: 220px;
-            height: 200px;
-            overflow: hidden;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        .logo img {
-            width: 100%; /* Bagian tengah dari gambar besar */
-            height: 100%; /* Sesuaikan sesuai rasio */
-            object-fit: cover;
-            object-position: center;
-            border-radius: 20px;
-        }
-        .text {
-            flex: 1;
-            text-align: left;
-        }
-        h1 {
-            margin: 0 0 5px; /* Mengurangi jarak dengan paragraf di bawahnya */
-            font-size: 2em;
-            font-weight: bold;
-        }
-        p {
-            margin: 0 0 10px;
-            font-size: 1.2em;
-        }
-        .divider {
-            width: 100px; /* Panjang divider sepanjang huruf IMPHNEN */
-            height: 1px;
-            background-color: #333;
-            margin: 5px 0 15px; /* Jarak antara paragraf dan divider */
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin-right: 10px;
-            text-decoration: underline;
-            color: #333;
-        }
-        @media (max-width: 600px) {
-            .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .logo {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            .text {
-                text-align: center;
-            }
-        }
-    </style>
+    <meta name="description"
+        content="IMPHNEN - Komunitas untuk para calon programmer handal yang ingin menjadi ahli namun merasa coding itu bikin malas!">
+    <meta name="keywords" content="programming, komunitas coding, belajar programming, dukungan coding, IMPHNEN">
+    <meta name="author" content="IMPHNEN">
+    <meta property="og:title" content="IMPHNEN - Komunitas Programming">
+    <meta property="og:description"
+        content="Komunitas untuk para calon programmer handal yang ingin menjadi ahli namun merasa coding itu malas.">
+    <meta property="og:image" content="/logo.jfif">
+    <meta property="og:url" content="https://imphnen.github.io">
+    <title>IMPHNEN - Komunitas Programming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
+    <div id="particles-js"></div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Ganti tema">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <main class="container">
         <div class="logo">
-            <!-- Placeholder for logo image -->
-            <img src="https://scontent.fmlg5-1.fna.fbcdn.net/v/t39.30808-6/439941705_7784491211612537_4746747856880066593_n.png?stp=dst-jpg_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFSb4--Z7NIhtMFwmPBqyFPWg5QjztinStaDlCPO2KdK39eKRYctXWz3lsNBPQ86B5K9_ogO8shtJBMc8q2fYgs&_nc_ohc=W9NEYFjxqaUQ7kNvgHG2VDi&_nc_zt=23&_nc_ht=scontent.fmlg5-1.fna&_nc_gid=ApSKdqk18GS7DqqumtFeXwk&oh=00_AYBY8B_qRinkZRW2qhsxaFWl-2nTyQlYXwJLIng018yDzQ&oe=677AE766" alt="IMPHNEN Logo">
+            <img src="/logo.jfif" alt="Logo IMPHNEN">
         </div>
         <div class="text">
             <h1>IMPHNEN</h1>
-            <p>Ingin Menjadi Programmer Handal Namun Enggan Ngoding</p>
+            <p class="tagline">Ingin Menjadi Programmer Handal Namun Enggan Ngoding</p>
             <div class="divider"></div>
-            <p>Grup ini berisi orang-orang yang ingin menjadi programmer handal tetapi tidak memiliki semangat, motivasi, atau niat untuk ngoding, dan lebih memilih scroll Facebook.</p>
+            <p class="description">Grup ini berisi orang-orang yang ingin menjadi programmer handal tetapi tidak
+                memiliki semangat, motivasi, atau niat untuk ngoding, dan lebih memilih scroll Fesnuk.</p>
             <div class="social-links">
-                <a href="https://discord.gg/Y2UxbZGBzx" target="_blank">Discord</a>
-                <a href="https://www.facebook.com/groups/programmerhandal/" target="_blank">Facebook</a>
-                <a href="https://github.com/IMPHNEN" target="_blank">GitHub</a>
+                <a href="https://discord.gg/Y2UxbZGBzx" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+                <a href="https://www.facebook.com/groups/programmerhandal/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://github.com/IMPHNEN" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
             </div>
         </div>
-    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
