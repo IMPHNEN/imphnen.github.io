@@ -1,0 +1,252 @@
+:root {
+    --bg-color: #f0f8ff;
+    --text-color: #333;
+    --container-bg: rgba(255, 255, 255, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --divider-color: #333;
+    --link-hover: #4a90e2;
+    --particle-color: #4a90e2;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --container-bg: rgba(40, 40, 40, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --divider-color: #e0e0e0;
+    --link-hover: #66b3ff;
+    --particle-color: #66b3ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--bg-color);
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    background: var(--container-bg);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+#themeToggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+#themeToggle i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    width: 250px;
+    height: 230px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: rotate(-3deg);
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: rotate(0deg);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text {
+    flex: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #4a90e2, #66b3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background: var(--divider-color);
+    margin: 15px 0;
+}
+
+.description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(128, 128, 128, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(128, 128, 128, 0.2);
+}
+
+.social-links a i {
+    font-size: 1.2em;
+}
+
+/* Custom colors for social media icons on hover */
+.social-links a:hover i.fa-discord {
+    color: #7289da;
+}
+
+.social-links a:hover i.fa-facebook {
+    color: #1877f2;
+}
+
+.social-links a:hover i.fa-github {
+    color: #333;
+}
+
+[data-theme="dark"] .social-links a:hover i.fa-github {
+    color: #fff;
+}
+
+.icon {
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .logo {
+        width: 200px;
+        height: 180px;
+        transform: rotate(0deg);
+    }
+
+    .divider {
+        margin: 15px auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1.1em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .social-links a {
+        padding: 8px 12px;
+    }
+}
